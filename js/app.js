@@ -10,18 +10,19 @@ import Bookmarks from '../components/Bookmarks.js'
 
 // INIT
 var doc = di.data
+var me = doc.mainEntity
 var bookmarks = doc.bookmark
 
 // RENDER
 render(
   html`
-          <${Navbar} title="${di.data.gitmark['nick']}" />
+          <${Navbar} title="${me.gitmark['nick']}" />
 
 
           <div style="font-family: monospace" class="row">
           <div class="card 1 col">
           <div class="tc">
-          <strong>${doc.gitmark['nick']}</strong> <br/>
+          <strong>${me.gitmark['nick']}</strong> <br/>
           <img
             src="https://robohash.org/gitmark:7f87e1f58b659961519db2cf4e33f27c13186c5fc5962c2aa37d4d21adf3977b:0"
           />
@@ -31,11 +32,11 @@ render(
           
 
               <p>
-              Energy: ${doc.energy} Marks <br/>
-              Birth: ${doc.birth} <br/>
+              Energy: ${me.energy} Marks <br/>
+              Birth: ${me.birth} <br/>
       Address: <a style="color: blue" href="https://chainz.cryptoid.info/marks/address.dws?${di
-      .data.address}.htm" target="_blank">${doc.address}</a> <br/>
-        Nostr: <a  style="color: blue" href="http://bitbots.org:2617/?pubkey=${doc.nostrkey}" target="_blank">${doc.nostrkey}</a>
+      .data.address}.htm" target="_blank">${me.address}</a> <br/>
+        Nostr: <a  style="color: blue" href="http://bitbots.org:2617/?pubkey=${me.nostr}" target="_blank">${me.nostr}</a>
         <br/>
         <br/>
         <br/>
@@ -74,7 +75,7 @@ render(
           <h4>Activity</h4>
           <pre>
       <a style="color: blue"
-                  href="https://gitmark.info/${doc.gitmark['@id'].split(
+                  href="https://gitmark.info/${me.gitmark['@id'].split(
         ':'
       )[1]}"
                   target="_blank"
@@ -86,11 +87,11 @@ render(
             |
             <a
               style="color: blue"
-              href="https://gitmark.info/${doc.gitmark['@id'].split(
+              href="https://gitmark.info/${me.gitmark['@id'].split(
         ':'
       )[1]}"
               target="_blank"
-              >${doc.gitmark['@id']}</a
+              >${me.gitmark['@id']}</a
             >
             |
           </footer>

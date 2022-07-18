@@ -1,5 +1,7 @@
 20220718
 new bot
+improve data structure
+add gradient
 
 
 20220717

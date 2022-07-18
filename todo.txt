@@ -8,6 +8,8 @@ vocabs
 vocab for bookmarks
 use linked objects
 right structure
+  type agent
+birth an int
 
 app layout
 styles, link colour
